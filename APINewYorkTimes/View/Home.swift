@@ -36,20 +36,32 @@ struct Home: View {
             
             TagsView()
             
-            ScrollView(.vertical, showsIndicators: false) {
-                // Books Card View
-                VStack(spacing: 35) {
-                    ForEach(sampleBooks) {
-                        BookCardView($0)
+            GeometryReader {
+                let size = $0.size
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    // Books Card View
+                    VStack(spacing: 35) {
+                        ForEach(sampleBooks) {
+                            BookCardView($0)
+                        }
                     }
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 20)
+                    .padding(.bottom, bottomPadding(size))
                 }
-                .padding(.horizontal, 15)
-                .padding(.vertical, 20)
+                /// Since we need offset from here and not from global View
+                .coordinateSpace(name: "SCROLLVIEW")
             }
-            /// Since we need offset from here and not from global View
-            .coordinateSpace(name: "SCROLLVIEW")
             .padding(.top, 15)
         }
+    }
+    
+    func bottomPadding(_ size: CGSize = .zero) -> CGFloat{
+        let cardHeight: CGFloat = 220
+        let scrollViewHeight: CGFloat = size.height
+        
+        return scrollViewHeight - cardHeight - 40
     }
     
     /// Book Card View
@@ -105,7 +117,9 @@ struct Home: View {
                         .shadow(color: .black.opacity(0.08), radius: 8, x: -5, y: -5)
                 }
                 .zIndex(1)
-
+                .overlay {
+                    Text("\(rect.minY)")
+                }
                 
                 /// Book Cover Image
                 ZStack {
