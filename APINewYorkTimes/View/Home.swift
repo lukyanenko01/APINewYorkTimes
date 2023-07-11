@@ -6,18 +6,15 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct Home: View {
     
     @State private var activeTag: String = "Biography"
-    /*
-     Щоб індикатор Tab працював плавно,
-     нам потрібно додати відповідну геометрію
-     ефект. Щоб додати відповідний
-     геометричний ефект, нам потрібна анімація
-     простір імен.
-     */
     @Namespace private var animation
+    
+    @State private var books: [Book] = []
+    let networkManager = NetworkManager()
     
     var body: some View {
         VStack(spacing: 15) {
@@ -30,6 +27,10 @@ struct Home: View {
                     .padding(.leading, 15)
                     .foregroundColor(.gray)
                     .offset(y: 2)
+                
+                Spacer(minLength: 10)
+
+                
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 15)
@@ -42,7 +43,7 @@ struct Home: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     // Books Card View
                     VStack(spacing: 35) {
-                        ForEach(sampleBooks) {
+                        ForEach(books) {
                             BookCardView($0)
                         }
                     }
@@ -54,6 +55,13 @@ struct Home: View {
                 .coordinateSpace(name: "SCROLLVIEW")
             }
             .padding(.top, 15)
+        }
+        .onAppear {
+            networkManager.fetchBooks(for: "Hardcover Nonfiction") { fetchedBooks in
+                if let fetchedBooks = fetchedBooks {
+                    self.books = fetchedBooks.books
+                }
+            }
         }
     }
     
@@ -83,14 +91,10 @@ struct Home: View {
                         .font(.caption)
                         .foregroundColor(.gray)
                     
-                    /// Reaiting View
-                    RatingView(rating: book.rating)
-                        .padding(.top, 10)
-                    
                     Spacer(minLength: 10)
                     
                     HStack(spacing: 4) {
-                        Text("\(book.bookViews)")
+                        Text("\(book.description)")
                             .font(.caption)
                             .fontWeight(.semibold)
                             .foregroundColor(.blue)
@@ -117,20 +121,19 @@ struct Home: View {
                         .shadow(color: .black.opacity(0.08), radius: 8, x: -5, y: -5)
                 }
                 .zIndex(1)
-                .overlay {
-                    Text("\(rect.minY)")
-                }
                 
                 /// Book Cover Image
                 ZStack {
-                    Image(book.imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: size.width / 2, height: size.height)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                    /// Applying Shadow
-                        .shadow(color: .black.opacity(0.08), radius: 5, x: 5, y: 5)
-                        .shadow(color: .black.opacity(0.08), radius: 5, x: -5, y: -5)
+                    if let url = URL(string: book.bookImage) {
+                        WebImage(url: url)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: size.width / 2, height: size.height)
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        /// Applying Shadow
+                            .shadow(color: .black.opacity(0.08), radius: 5, x: 5, y: 5)
+                            .shadow(color: .black.opacity(0.08), radius: 5, x: -5, y: -5)
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
@@ -189,26 +192,5 @@ var tags: [String] = ["History", "Classical", "Biography", "Cartoon", "Adventure
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-/// Custom Rating View
-struct RatingView: View {
-    var rating: Int
-    var body: some View {
-        HStack(spacing: 4) {
-            ForEach(1...5, id: \.self) { index in
-                
-                Image(systemName: "star.fill")
-                    .font(.caption2)
-                    .foregroundColor(index <= rating ? . yellow : .gray.opacity(0.5))
-            }
-            
-            Text("(\(rating))")
-                .font(.caption)
-                .fontWeight(.semibold)
-                .foregroundColor(.yellow)
-                .padding(.leading, 5)
-        }
     }
 }

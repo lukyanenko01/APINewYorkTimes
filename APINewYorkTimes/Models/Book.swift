@@ -7,19 +7,45 @@
 
 import Foundation
 
-struct Book: Identifiable, Hashable{
-    var id: String = UUID().uuidString
-    var title: String
-    var imageName: String
-    var author: String
-    var rating: Int
-    var bookViews: Int
+struct NYTBestSellerListResponse: Codable {
+    let status: String
+    let numResults: Int
+    let results: NYTBestSellerList
+
+    enum CodingKeys: String, CodingKey {
+        case status
+        case numResults = "num_results"
+        case results
+    }
 }
 
-var sampleBooks: [Book] = [
-    .init(title: "Five Feet Apart", imageName: "Book 1", author: "Rachael Lippincott", rating: 4, bookViews: 1023),
-    .init(title: "The Alchemist", imageName: "Book 2", author: "William B.Irvine", rating: 5, bookViews: 2049),
-    .init(title: "Booke of Hapiness", imageName: "Book 3", author: "Anne", rating: 4, bookViews: 920),
-    .init(title: "Living Alone", imageName: "Book 4", author: "William Lippincott", rating: 3, bookViews: 560),
-    .init(title: "Five Feet Apart", imageName: "Book 5", author: "Jenna Lippincott", rating: 5, bookViews: 240),
-]
+struct NYTBestSellerList: Codable {
+    let listName: String
+    let bestsellersDate: String
+    let publishedDate: String
+    let books: [Book]
+
+    enum CodingKeys: String, CodingKey {
+        case listName = "list_name"
+        case bestsellersDate = "bestsellers_date"
+        case publishedDate = "published_date"
+        case books
+    }
+}
+
+struct Book: Codable, Identifiable {
+    let id = UUID()
+    let title: String
+    let description: String
+    let author: String
+    let bookImage: String
+    let amazonProductUrl: String
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case description
+        case author
+        case bookImage = "book_image"
+        case amazonProductUrl = "amazon_product_url"
+    }
+}

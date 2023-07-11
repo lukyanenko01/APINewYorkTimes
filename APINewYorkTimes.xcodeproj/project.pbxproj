@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F20760F62A5D80E10084AE32 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F20760F52A5D80E10084AE32 /* SDWebImageSwiftUI */; };
+		F20760F82A5D81940084AE32 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20760F72A5D81940084AE32 /* NetworkManager.swift */; };
 		F27493BD2A5C5BAE002D6507 /* APINewYorkTimesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27493BC2A5C5BAE002D6507 /* APINewYorkTimesApp.swift */; };
 		F27493BF2A5C5BAE002D6507 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27493BE2A5C5BAE002D6507 /* ContentView.swift */; };
 		F27493C12A5C5BB0002D6507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27493C02A5C5BB0002D6507 /* Assets.xcassets */; };
@@ -16,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F20760F72A5D81940084AE32 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F27493B92A5C5BAE002D6507 /* APINewYorkTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APINewYorkTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27493BC2A5C5BAE002D6507 /* APINewYorkTimesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINewYorkTimesApp.swift; sourceTree = "<group>"; };
 		F27493BE2A5C5BAE002D6507 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F20760F62A5D80E10084AE32 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,10 +59,10 @@
 		F27493BB2A5C5BAE002D6507 /* APINewYorkTimes */ = {
 			isa = PBXGroup;
 			children = (
+				F27493BC2A5C5BAE002D6507 /* APINewYorkTimesApp.swift */,
+				F20760F72A5D81940084AE32 /* NetworkManager.swift */,
 				F27493CB2A5C5F74002D6507 /* View */,
 				F27493CA2A5C5F66002D6507 /* Models */,
-				F27493BC2A5C5BAE002D6507 /* APINewYorkTimesApp.swift */,
-				F27493BE2A5C5BAE002D6507 /* ContentView.swift */,
 				F27493C02A5C5BB0002D6507 /* Assets.xcassets */,
 				F27493C22A5C5BB0002D6507 /* Preview Content */,
 			);
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				F27493CE2A5C5FEB002D6507 /* Home.swift */,
+				F27493BE2A5C5BAE002D6507 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +110,9 @@
 			dependencies = (
 			);
 			name = APINewYorkTimes;
+			packageProductDependencies = (
+				F20760F52A5D80E10084AE32 /* SDWebImageSwiftUI */,
+			);
 			productName = APINewYorkTimes;
 			productReference = F27493B92A5C5BAE002D6507 /* APINewYorkTimes.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +141,9 @@
 				Base,
 			);
 			mainGroup = F27493B02A5C5BAE002D6507;
+			packageReferences = (
+				F20760F42A5D80E10084AE32 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = F27493BA2A5C5BAE002D6507 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,6 +172,7 @@
 			files = (
 				F27493BF2A5C5BAE002D6507 /* ContentView.swift in Sources */,
 				F27493BD2A5C5BAE002D6507 /* APINewYorkTimesApp.swift in Sources */,
+				F20760F82A5D81940084AE32 /* NetworkManager.swift in Sources */,
 				F27493CF2A5C5FEB002D6507 /* Home.swift in Sources */,
 				F27493CD2A5C5F87002D6507 /* Book.swift in Sources */,
 			);
@@ -294,11 +306,13 @@
 				DEVELOPMENT_TEAM = T73BLRAKR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +320,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.APINewYorkTimes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,11 +340,13 @@
 				DEVELOPMENT_TEAM = T73BLRAKR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +354,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.APINewYorkTimes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -363,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F20760F42A5D80E10084AE32 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F20760F52A5D80E10084AE32 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F20760F42A5D80E10084AE32 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F27493B12A5C5BAE002D6507 /* Project object */;
 }
