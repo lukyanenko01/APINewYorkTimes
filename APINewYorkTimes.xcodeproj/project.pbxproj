@@ -11,6 +11,8 @@
 		F27493BF2A5C5BAE002D6507 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27493BE2A5C5BAE002D6507 /* ContentView.swift */; };
 		F27493C12A5C5BB0002D6507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27493C02A5C5BB0002D6507 /* Assets.xcassets */; };
 		F27493C42A5C5BB0002D6507 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27493C32A5C5BB0002D6507 /* Preview Assets.xcassets */; };
+		F27493CD2A5C5F87002D6507 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27493CC2A5C5F87002D6507 /* Book.swift */; };
+		F27493CF2A5C5FEB002D6507 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27493CE2A5C5FEB002D6507 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		F27493BE2A5C5BAE002D6507 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F27493C02A5C5BB0002D6507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F27493C32A5C5BB0002D6507 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F27493CC2A5C5F87002D6507 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F27493CE2A5C5FEB002D6507 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 		F27493BB2A5C5BAE002D6507 /* APINewYorkTimes */ = {
 			isa = PBXGroup;
 			children = (
+				F27493CB2A5C5F74002D6507 /* View */,
+				F27493CA2A5C5F66002D6507 /* Models */,
 				F27493BC2A5C5BAE002D6507 /* APINewYorkTimesApp.swift */,
 				F27493BE2A5C5BAE002D6507 /* ContentView.swift */,
 				F27493C02A5C5BB0002D6507 /* Assets.xcassets */,
@@ -65,6 +71,22 @@
 				F27493C32A5C5BB0002D6507 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F27493CA2A5C5F66002D6507 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F27493CC2A5C5F87002D6507 /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F27493CB2A5C5F74002D6507 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F27493CE2A5C5FEB002D6507 /* Home.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +161,8 @@
 			files = (
 				F27493BF2A5C5BAE002D6507 /* ContentView.swift in Sources */,
 				F27493BD2A5C5BAE002D6507 /* APINewYorkTimesApp.swift in Sources */,
+				F27493CF2A5C5FEB002D6507 /* Home.swift in Sources */,
+				F27493CD2A5C5F87002D6507 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
