@@ -10,10 +10,12 @@ import SDWebImageSwiftUI
 
 struct Home: View {
     
-    @State private var activeTag: String = "Biography"
+    @State private var activeTag: BookCategory = .hardcoverNonfiction
     @Namespace private var animation
     
     @State private var books: [Book] = []
+    @State private var isLoading: Bool = false
+
     let networkManager = NetworkManager()
     
     var body: some View {
@@ -57,13 +59,38 @@ struct Home: View {
             .padding(.top, 15)
         }
         .onAppear {
-            networkManager.fetchBooks(for: "Hardcover Nonfiction") { fetchedBooks in
-                if let fetchedBooks = fetchedBooks {
-                    self.books = fetchedBooks.books
+            fetchBooks()
+
+        }
+        .overlay(isLoading ? ProgressView() : nil)
+
+    }
+    
+    private func fetchBooks() {
+        let currentTag = activeTag
+        isLoading = true
+        books = []
+        Task {
+            do {
+                let fetchedBooks = try await networkManager.fetchBooks(for: currentTag.rawValue)
+                DispatchQueue.main.async {
+                    if self.activeTag == currentTag {
+                        self.books = fetchedBooks.books
+                        self.isLoading = false
+                    }
+                }
+            } catch {
+                print("Failed to fetch books: \(error)")
+                DispatchQueue.main.async {
+                    if self.activeTag == currentTag {
+                        self.isLoading = false
+                    }
                 }
             }
         }
     }
+
+
     
     func bottomPadding(_ size: CGSize = .zero) -> CGFloat{
         let cardHeight: CGFloat = 220
@@ -158,8 +185,8 @@ struct Home: View {
     func TagsView() -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(tags, id: \.self) { tag in
-                    Text(tag)
+                ForEach(BookCategory.allCases, id: \.self) { tag in
+                    Text(tag.rawValue)
                         .font(.caption)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 5)
@@ -177,8 +204,10 @@ struct Home: View {
                         .onTapGesture {
                             withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7)) {
                                 activeTag = tag
+                                fetchBooks()  // вызов новой функции fetchBooks
                             }
                         }
+                    
                 }
             }
             .padding(.horizontal, 15)
@@ -187,7 +216,18 @@ struct Home: View {
 }
 
 /// Sample Tags
-var tags: [String] = ["History", "Classical", "Biography", "Cartoon", "Adventure", "Fairy tales", "Fantasy"]
+enum BookCategory: String, CaseIterable {
+    case hardcoverNonfiction = "Hardcover Nonfiction"
+    case combinedPrintAndEBookFiction = "Combined Print and E-Book Fiction"
+    case combinedPrintAndEBookNonfiction = "Combined Print and E-Book Nonfiction"
+    case hardcoverFiction = "Hardcover Fiction"
+    case tradeFictionPaperback = "Trade Fiction Paperback"
+    case massMarketPaperback = "Mass Market Paperback"
+    case paperbackNonfiction = "Paperback Nonfiction"
+    case eBookFiction = "E-Book Fiction"
+    case eBookNonfiction = "E-Book Nonfiction"
+}
+
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
