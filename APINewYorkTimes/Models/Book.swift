@@ -7,10 +7,22 @@
 
 import Foundation
 
+enum BookCategory: String, CaseIterable {
+    case hardcoverNonfiction = "Hardcover Nonfiction"
+    case combinedPrintAndEBookFiction = "Combined Print and E-Book Fiction"
+    case combinedPrintAndEBookNonfiction = "Combined Print and E-Book Nonfiction"
+    case hardcoverFiction = "Hardcover Fiction"
+    case tradeFictionPaperback = "Trade Fiction Paperback"
+    case massMarketPaperback = "Mass Market Paperback"
+    case paperbackNonfiction = "Paperback Nonfiction"
+    case eBookFiction = "E-Book Fiction"
+    case eBookNonfiction = "E-Book Nonfiction"
+}
+
 struct NYTBestSellerListResponse: Codable {
-    let status: String
-    let numResults: Int
-    let results: NYTBestSellerList
+    let status: String?
+    let numResults: Int?
+    let results: NYTBestSellerList?
 
     enum CodingKeys: String, CodingKey {
         case status
@@ -34,7 +46,7 @@ struct NYTBestSellerList: Codable {
 }
 
 struct Book: Codable, Identifiable {
-    let id = UUID()
+    let id = UUID().uuidString
     let title: String
     let description: String
     let author: String
