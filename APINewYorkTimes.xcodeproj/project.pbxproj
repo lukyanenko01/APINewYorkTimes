@@ -7,18 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F20760F62A5D80E10084AE32 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F20760F52A5D80E10084AE32 /* SDWebImageSwiftUI */; };
+		F20760F82A5D81940084AE32 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20760F72A5D81940084AE32 /* NetworkManager.swift */; };
+		F20760FB2A5F04830084AE32 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20760FA2A5F04830084AE32 /* HomeViewModel.swift */; };
+		F20760FD2A6034630084AE32 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20760FC2A6034630084AE32 /* DetailView.swift */; };
+		F20760FF2A603A1E0084AE32 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20760FE2A603A1E0084AE32 /* CustomCorners.swift */; };
+		F20761012A6056220084AE32 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20761002A6056220084AE32 /* TagsView.swift */; };
+		F20761042A6056600084AE32 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20761032A6056600084AE32 /* ErrorView.swift */; };
+		F20761062A6056720084AE32 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20761052A6056720084AE32 /* LoadingView.swift */; };
+		F20761082A60590A0084AE32 /* BookCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20761072A60590A0084AE32 /* BookCardView.swift */; };
 		F27493BD2A5C5BAE002D6507 /* APINewYorkTimesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27493BC2A5C5BAE002D6507 /* APINewYorkTimesApp.swift */; };
 		F27493BF2A5C5BAE002D6507 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27493BE2A5C5BAE002D6507 /* ContentView.swift */; };
 		F27493C12A5C5BB0002D6507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27493C02A5C5BB0002D6507 /* Assets.xcassets */; };
 		F27493C42A5C5BB0002D6507 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27493C32A5C5BB0002D6507 /* Preview Assets.xcassets */; };
+		F27493CD2A5C5F87002D6507 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27493CC2A5C5F87002D6507 /* Book.swift */; };
+		F27493CF2A5C5FEB002D6507 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27493CE2A5C5FEB002D6507 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F20760F72A5D81940084AE32 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F20760FA2A5F04830084AE32 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F20760FC2A6034630084AE32 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F20760FE2A603A1E0084AE32 /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		F20761002A6056220084AE32 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		F20761032A6056600084AE32 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		F20761052A6056720084AE32 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F20761072A60590A0084AE32 /* BookCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCardView.swift; sourceTree = "<group>"; };
 		F27493B92A5C5BAE002D6507 /* APINewYorkTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APINewYorkTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27493BC2A5C5BAE002D6507 /* APINewYorkTimesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINewYorkTimesApp.swift; sourceTree = "<group>"; };
 		F27493BE2A5C5BAE002D6507 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F27493C02A5C5BB0002D6507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F27493C32A5C5BB0002D6507 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F27493CC2A5C5F87002D6507 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F27493CE2A5C5FEB002D6507 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +47,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F20760F62A5D80E10084AE32 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F20760F92A5F045F0084AE32 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F20760FA2A5F04830084AE32 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F20761022A6056350084AE32 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F20760FE2A603A1E0084AE32 /* CustomCorners.swift */,
+				F20761002A6056220084AE32 /* TagsView.swift */,
+				F20761032A6056600084AE32 /* ErrorView.swift */,
+				F20761052A6056720084AE32 /* LoadingView.swift */,
+				F20761072A60590A0084AE32 /* BookCardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F20761092A605A0D0084AE32 /* Networ */ = {
+			isa = PBXGroup;
+			children = (
+				F20760F72A5D81940084AE32 /* NetworkManager.swift */,
+			);
+			path = Networ;
+			sourceTree = "<group>";
+		};
 		F27493B02A5C5BAE002D6507 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				F27493BC2A5C5BAE002D6507 /* APINewYorkTimesApp.swift */,
-				F27493BE2A5C5BAE002D6507 /* ContentView.swift */,
+				F20761092A605A0D0084AE32 /* Networ */,
+				F27493CA2A5C5F66002D6507 /* Models */,
+				F27493CB2A5C5F74002D6507 /* View */,
+				F20760F92A5F045F0084AE32 /* ViewModel */,
 				F27493C02A5C5BB0002D6507 /* Assets.xcassets */,
 				F27493C22A5C5BB0002D6507 /* Preview Content */,
 			);
@@ -65,6 +118,25 @@
 				F27493C32A5C5BB0002D6507 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F27493CA2A5C5F66002D6507 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F27493CC2A5C5F87002D6507 /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F27493CB2A5C5F74002D6507 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F20761022A6056350084AE32 /* Components */,
+				F27493CE2A5C5FEB002D6507 /* HomeView.swift */,
+				F20760FC2A6034630084AE32 /* DetailView.swift */,
+				F27493BE2A5C5BAE002D6507 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +155,9 @@
 			dependencies = (
 			);
 			name = APINewYorkTimes;
+			packageProductDependencies = (
+				F20760F52A5D80E10084AE32 /* SDWebImageSwiftUI */,
+			);
 			productName = APINewYorkTimes;
 			productReference = F27493B92A5C5BAE002D6507 /* APINewYorkTimes.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +186,9 @@
 				Base,
 			);
 			mainGroup = F27493B02A5C5BAE002D6507;
+			packageReferences = (
+				F20760F42A5D80E10084AE32 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = F27493BA2A5C5BAE002D6507 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +216,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F27493BF2A5C5BAE002D6507 /* ContentView.swift in Sources */,
+				F20761082A60590A0084AE32 /* BookCardView.swift in Sources */,
+				F20760FB2A5F04830084AE32 /* HomeViewModel.swift in Sources */,
 				F27493BD2A5C5BAE002D6507 /* APINewYorkTimesApp.swift in Sources */,
+				F20761062A6056720084AE32 /* LoadingView.swift in Sources */,
+				F20760FD2A6034630084AE32 /* DetailView.swift in Sources */,
+				F20760F82A5D81940084AE32 /* NetworkManager.swift in Sources */,
+				F20761042A6056600084AE32 /* ErrorView.swift in Sources */,
+				F20760FF2A603A1E0084AE32 /* CustomCorners.swift in Sources */,
+				F27493CF2A5C5FEB002D6507 /* HomeView.swift in Sources */,
+				F27493CD2A5C5F87002D6507 /* Book.swift in Sources */,
+				F20761012A6056220084AE32 /* TagsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +358,13 @@
 				DEVELOPMENT_TEAM = T73BLRAKR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,9 +372,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.APINewYorkTimes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,11 +392,13 @@
 				DEVELOPMENT_TEAM = T73BLRAKR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +406,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.APINewYorkTimes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -339,6 +437,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F20760F42A5D80E10084AE32 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F20760F52A5D80E10084AE32 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F20760F42A5D80E10084AE32 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F27493B12A5C5BAE002D6507 /* Project object */;
 }
