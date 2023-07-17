@@ -13,6 +13,33 @@ class NetworkManager {
     let apiKey = "S7GRIeVGv4tl3KMIo5QPzujqj1BJ8eHl"
 
     private var currentTask: URLSessionDataTask?
+    
+    func fetchAllCategories(completion: @escaping (Result<[String], Error>) -> Void) {
+        // Здесь список всех возможных категорий, которые вы знаете
+        let allKnownCategories = BookCategory.allCases.map { $0.rawValue }
+        var allCategories = Set<String>()
+
+        let group = DispatchGroup()
+
+        for category in allKnownCategories {
+            group.enter()
+
+            fetchBooks(for: category) { result in
+                switch result {
+                case .success(let bookList):
+                    allCategories.insert(bookList.listName)
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+                group.leave()
+            }
+        }
+
+        group.notify(queue: .main) {
+            completion(.success(Array(allCategories)))
+        }
+    }
+
 
     func fetchBooks(for category: String, completion: @escaping (Result<NYTBestSellerList, Error>) -> Void) {
         let formattedCategory = category.replacingOccurrences(of: " ", with: "%20")

@@ -74,6 +74,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		F20761092A605A0D0084AE32 /* Networ */ = {
+			isa = PBXGroup;
+			children = (
+				F20760F72A5D81940084AE32 /* NetworkManager.swift */,
+			);
+			path = Networ;
+			sourceTree = "<group>";
+		};
 		F27493B02A5C5BAE002D6507 = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F27493BC2A5C5BAE002D6507 /* APINewYorkTimesApp.swift */,
-				F20760F72A5D81940084AE32 /* NetworkManager.swift */,
+				F20761092A605A0D0084AE32 /* Networ */,
 				F27493CA2A5C5F66002D6507 /* Models */,
 				F27493CB2A5C5F74002D6507 /* View */,
 				F20760F92A5F045F0084AE32 /* ViewModel */,
